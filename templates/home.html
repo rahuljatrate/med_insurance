@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical_Insurance</title>
+
+</head>
+<style>
+
+body
+  {
+  background-image:url("/static/image2.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  
+}
+
+ /* Style inputs with type="text", select elements and textareas */
+ input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid rgb(24, 22, 22); /*Gray border*/
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #a6dac7;
+  color: rgb(19, 18, 18);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 10px;
+  /* width: fit-content; */
+  /* margin-left: 10%; */
+  background-color:#cdebeb;
+  padding: 20px;
+  margin: 40px;
+  /* background-color: #eff7f5; */
+  /* border: 2px solid black; */
+  /* opacity: 0.6;  */
+}
+
+</style>
+<body>
+    <div class="container">
+        <form action="{{url_for('hello_flask')}}" method="POST">
+
+        <h5>Medical Insurance Prediction<h5>
+        
+        <label for="gender">GENDER</label>
+        <select id="gender" name="gender">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select>
+      
+        <label for="smoker">SMOKER</label><br>
+        <input type="radio" id="smoker" name="smoker" value="1">
+          <label for="yes">Yes</label>
+          <input type="radio" id="smoker" name="smoker" value="0">
+          <label for="no">No</label><br><br>
+          
+
+        <label for="Age">AGE</label>
+        <input type="text" id="age" name="age" placeholder="Your age..">
+
+        <label for="Children">Childern</label>
+        <input type="text" id="Children" name="Children" placeholder="Your Children..">
+          
+
+        <label for="BMI">BMI</label>
+        <input type="text" id="BMI" name="BMI" placeholder="BMI.">
+
+
+        <label for="region">REGION</label>
+        <select id="region" name="region">
+            <option value="region_northeast">region_northeast</option>
+            <option value="region_northwest">region_northwest</option>
+            <option value="region_southeast">region_southeast</option>
+            <option value="region_southwest">region_southwest</option>
+        </select>
+      
+          <input type="submit" value="Submit">
+      
+        </form>
+        <h2>RESULT<h2>
+        <p style="text-align: center;">{{ output }}</p>
+      </div>     
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
